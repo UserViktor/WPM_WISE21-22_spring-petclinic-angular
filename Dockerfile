@@ -1,7 +1,7 @@
 ARG DOCKER_HUB="docker.io"
 ARG NGINX_VERSION="1.17.6"
 
-FROM $DOCKER_HUB/library/node:10.10-alpine as build
+FROM $DOCKER_HUB/library/node:14.18.2-alpine as build
 
 
 COPY . /workspace/
