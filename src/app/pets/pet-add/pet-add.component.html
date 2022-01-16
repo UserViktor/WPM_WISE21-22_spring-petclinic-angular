@@ -16,12 +16,16 @@
   ~  */
   -->
 
+
+
+
+
 <div class="container-fluid">
   <div class="container xd-container">
     <h2>
       Add Pet
     </h2>
-    <form class="form-horizontal" (ngSubmit)="onSubmit(petForm.value)" #petForm="ngForm">
+    <form (ngSubmit)="onSubmit(petForm.value)" #petForm="ngForm" class="form-horizontal">
       <div class="form-group" hidden="true">
         <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="pet.id" name="id"/>
         <input type="text" hidden="true" class="form-control" id="owner" [(ngModel)]="pet.owner" name="owner"/>
@@ -85,7 +89,7 @@
         <div class="col-sm-offset-2 col-sm-10">
           <br/>
           <button class="btn btn-default" type="button" (click)="gotoOwnerDetail()">< Back</button>
-          <button class="btn btn-default" type="submit">Save Pet</button>
+          <button class="btn btn-default" type="submit" [disabled]="!petForm.valid">Save Pet</button>
         </div>
       </div>
     </form>

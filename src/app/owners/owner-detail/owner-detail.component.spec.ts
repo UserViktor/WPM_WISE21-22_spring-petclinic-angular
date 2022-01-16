@@ -129,6 +129,14 @@ describe('OwnerDetailComponent', () => {
     addNewPetButton.click();
     spyOn(component, 'addPet').and.callThrough();
     expect(router.navigate).toHaveBeenCalledWith(['/owners']);
+
+    let deleteOwnerButton= buttons[3].nativeElement;
+    deleteOwnerButton.click();
+
+    spyOn(component, 'deleteOwner').and.callThrough();
+    expect(router.navigate).toHaveBeenCalledWith(['/owners']);
   });
+
+
 
 });

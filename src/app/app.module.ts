@@ -35,11 +35,13 @@ import {PartsModule} from './parts/parts.module';
 import {SpecialtiesModule} from './specialties/specialties.module';
 import {HttpErrorHandler} from './error.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { OwnerDeleteComponent } from './owners/owner-delete/owner-delete.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+   // OwnerDeleteComponent,
   ],
   imports: [
     BrowserModule,
