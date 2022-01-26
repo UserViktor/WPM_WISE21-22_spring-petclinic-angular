@@ -34,7 +34,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ActivatedRouteStub, RouterStub } from '../../testing/router-stubs';
 import { Owner } from '../owner';
 import { Observable, of } from 'rxjs';
-import {catchError} from "rxjs/operators";
 
 class OwnerServiceStub {
   getOwnerById(): Observable<Owner> {
@@ -112,7 +111,7 @@ describe('OwnerDetailComponent', () => {
     });
   });
 
-  it('routing to owners page on click of editOwner,addPet,gotoOwnersList,deleteOwner', () => {
+  it('routing to owners page on click of editOwner,addPet,gotoOwnersList', () => {
     spyOn(router, 'navigate');
     let buttons = fixture.debugElement.queryAll(By.css('button'));
 
@@ -129,11 +128,6 @@ describe('OwnerDetailComponent', () => {
     let addNewPetButton = buttons[2].nativeElement;
     addNewPetButton.click();
     spyOn(component, 'addPet').and.callThrough();
-    expect(router.navigate).toHaveBeenCalledWith(['/owners']);
-
-    let deleteOwnerButton = buttons[3].nativeElement;
-    deleteOwnerButton.click();
-    spyOn(component, 'deleteOwner').and.callThrough();
     expect(router.navigate).toHaveBeenCalledWith(['/owners']);
   });
 

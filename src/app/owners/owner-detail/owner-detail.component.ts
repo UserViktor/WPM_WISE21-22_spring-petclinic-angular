@@ -24,10 +24,6 @@ import {Component, OnInit} from '@angular/core';
 import {OwnerService} from '../owner.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Owner} from '../owner';
-import {Observable} from "rxjs";
-import {catchError} from "rxjs/operators";
-import {environment} from "../../../environments/environment";
-import {HandleError} from "../../error.service";
 
 
 @Component({
@@ -38,7 +34,6 @@ import {HandleError} from "../../error.service";
 export class OwnerDetailComponent implements OnInit {
   errorMessage: string;
   owner: Owner;
-  ownerId: number;
 
   constructor(private route: ActivatedRoute, private router: Router, private ownerService: OwnerService) {
     this.owner = {} as Owner;
@@ -63,13 +58,5 @@ export class OwnerDetailComponent implements OnInit {
     this.router.navigate(['/owners', owner.id, 'pets', 'add']);
   }
 
-  deleteOwner(owner: Owner) {
-    const ownerId = this.route.snapshot.params.id;
-    this.ownerService.deleteOwner(ownerId).subscribe(
-      deleteOwner => {
-        this.gotoOwnersList();
-      },
-      error => this.errorMessage = error as any
-    );
-  }
+
 }
