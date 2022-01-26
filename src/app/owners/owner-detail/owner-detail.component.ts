@@ -58,5 +58,13 @@ export class OwnerDetailComponent implements OnInit {
     this.router.navigate(['/owners', owner.id, 'pets', 'add']);
   }
 
-
+  deleteOwner(owner: Owner) {
+    const ownerId = this.route.snapshot.params.id;
+    this.ownerService.deleteOwner(ownerId).subscribe(
+      deleteOwner => {
+        this.gotoOwnersList();
+      },
+      error => this.errorMessage = error as any
+    );
+  }
 }
