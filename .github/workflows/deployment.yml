@@ -1,9 +1,9 @@
 name: build docker and push
 
-# Only trigger, when the workflow described in maven-build.yml succeeded
+# Only trigger, when the workflow described in cypress.yml succeeded
 on:
   workflow_run:
-    workflows: ["Angular CI"]
+    workflows: ["Cypress Tests"]
     types:
       - completed
 
