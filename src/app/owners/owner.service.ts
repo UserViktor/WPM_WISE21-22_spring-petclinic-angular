@@ -81,4 +81,5 @@ export class OwnerService {
       .get<Owner[]>(url)
       .pipe(catchError(this.handlerError('searchOwners', [])));
   }
+
 }

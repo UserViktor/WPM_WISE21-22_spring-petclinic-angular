@@ -26,6 +26,10 @@ import {Owner} from '../owner';
 import {Router} from '@angular/router';
 import {Pet} from '../../pets/pet';
 import {PetService} from '../../pets/pet.service';
+import {VisitService} from '../../visits/visit.service';
+import {Visit} from '../../visits/visit';
+import { last } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-owner-list',
@@ -37,9 +41,10 @@ export class OwnerListComponent implements OnInit {
   lastName: string;
   owners: Owner[];
   pets: Pet[];
+  visits: Visit[];
   listOfOwnersWithLastName: Owner[];
 
-  constructor(private router: Router, private ownerService: OwnerService, private petService: PetService) {
+  constructor(private router: Router, private ownerService: OwnerService, private petService: PetService, private visitService: VisitService) {
 
   }
 
@@ -51,7 +56,12 @@ export class OwnerListComponent implements OnInit {
     this.petService.getPets().subscribe(
       pets => this.pets = pets,
       error => this.errorMessage= error as any
-    );  
+    );
+    
+    this.visitService.getVisits().subscribe(
+      visits => this.visits = visits,
+      error => this.errorMessage = error as any
+    );
   }
 
   onSelect(owner: Owner) {
@@ -91,34 +101,4 @@ export class OwnerListComponent implements OnInit {
 
       }
   }
-
-  // searchByPetName(name: string)
-  // {
-  //     console.log('inside search by last name starting with ' + (name));
-  //     if (name === '')
-  //     {
-  //     this.petService.getPets()
-  //     .subscribe(
-  //           (pets) => {
-  //            this.pets = pets;
-  //           });
-  //     }
-  //     if (name !== '')
-  //     {
-  //     this.petService.searchPets(name)
-  //     .subscribe(
-  //     (name) => {
-  //      this.pets = pets;
-  //      console.log('this.pets ' + this.pets);
-
-  //      },
-  //      (error) =>
-  //      {
-  //        this.pets = null;
-  //      }
-  //     );
-
-  //     }
-  // }
-
 }
