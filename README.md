@@ -9,8 +9,7 @@ Warning: **client only**.
   You need start backend server before start frontend application.
 
 ## Screenshot
-//TODO:Screenshot aktualisieren
-![Screenshot of SPring Petclinic Angular](https://cloud.githubusercontent.com/assets/838318/23263243/f4509c4a-f9dd-11e6-951b-69d0ef72d8bd.png)
+![Screenshot of SPring Petclinic Angular](angular_petclinic.png)
   
 
 ## Installation
