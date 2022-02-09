@@ -127,6 +127,30 @@
               "devServerTarget": "spring-petclinic-angular:serve:production"
             }
           }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "spring-petclinic-angular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "spring-petclinic-angular:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "spring-petclinic-angular:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "spring-petclinic-angular:serve:production"
+            }
+          }
         }
       }
     }
