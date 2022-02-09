@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -113,6 +116,30 @@
           }
         },
         "e2e": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "spring-petclinic-angular:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "spring-petclinic-angular:serve:production"
+            }
+          }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "spring-petclinic-angular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "spring-petclinic-angular:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
           "builder": "@briebug/cypress-schematic:cypress",
           "options": {
             "devServerTarget": "spring-petclinic-angular:serve",

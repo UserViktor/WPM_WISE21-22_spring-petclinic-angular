@@ -24,6 +24,12 @@ import {Component, OnInit} from '@angular/core';
 import {OwnerService} from '../owner.service';
 import {Owner} from '../owner';
 import {Router} from '@angular/router';
+import {Pet} from '../../pets/pet';
+import {PetService} from '../../pets/pet.service';
+import {VisitService} from '../../visits/visit.service';
+import {Visit} from '../../visits/visit';
+import { last } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-owner-list',
@@ -34,9 +40,11 @@ export class OwnerListComponent implements OnInit {
   errorMessage: string;
   lastName: string;
   owners: Owner[];
+  pets: Pet[];
+  visits: Visit[];
   listOfOwnersWithLastName: Owner[];
 
-  constructor(private router: Router, private ownerService: OwnerService) {
+  constructor(private router: Router, private ownerService: OwnerService, private petService: PetService, private visitService: VisitService) {
 
   }
 
@@ -44,6 +52,16 @@ export class OwnerListComponent implements OnInit {
     this.ownerService.getOwners().subscribe(
       owners => this.owners = owners,
       error => this.errorMessage = error as any);
+    
+    this.petService.getPets().subscribe(
+      pets => this.pets = pets,
+      error => this.errorMessage= error as any
+    );
+    
+    this.visitService.getVisits().subscribe(
+      visits => this.visits = visits,
+      error => this.errorMessage = error as any
+    );
   }
 
   onSelect(owner: Owner) {
@@ -83,6 +101,4 @@ export class OwnerListComponent implements OnInit {
 
       }
   }
-
-
 }
