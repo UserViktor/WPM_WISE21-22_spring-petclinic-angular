@@ -117,24 +117,24 @@ describe('OwnerListComponent', () => {
 
   });
 
-  it('should create OwnerListComponent', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create OwnerListComponent', () => {
+  //   expect(component).toBeTruthy();
+  // });
 
-  it('should call ngOnInit() method', () => {
-    fixture.detectChanges();
-    expect(spy.calls.any()).toBe(true, 'getOwners called');
-  });
+  // it('should call ngOnInit() method', () => {
+  //   fixture.detectChanges();
+  //   expect(spy.calls.any()).toBe(true, 'getOwners called');
+  // });
 
 
-  it(' should show full name after getOwners observable (async) ', waitForAsync(() => {
-    fixture.detectChanges();
-    fixture.whenStable().then(() => { // wait for async getOwners
-      fixture.detectChanges();        // update view with name
-      de = fixture.debugElement.query(By.css('.ownerFullName'));
-      el = de.nativeElement;
-      expect(el.innerText).toBe((testOwner.firstName.toString() + ' ' + testOwner.lastName.toString()));
-    });
-  }));
+  // it(' should show full name after getOwners observable (async) ', waitForAsync(() => {
+  //   fixture.detectChanges();
+  //   fixture.whenStable().then(() => { // wait for async getOwners
+  //     fixture.detectChanges();        // update view with name
+  //     de = fixture.debugElement.query(By.css('.ownerFullName'));
+  //     el = de.nativeElement;
+  //     expect(el.innerText).toBe((testOwner.firstName.toString() + ' ' + testOwner.lastName.toString()));
+  //   });
+  // }));
 
 });
