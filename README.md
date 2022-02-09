@@ -1,5 +1,7 @@
 # Spring Petclinic Angular (forked from Original:[spring-petclinic-angular](https://github.com/spring-petclinic/spring-petclinic-angular/))
 
+[![Build Status](https://github.com/UserViktor/WPM_WISE21-22_spring-petclinic-angular/actions/workflows/angular-ci.yml/badge.svg)](https://github.com/UserViktor/WPM_WISE21-22_spring-petclinic-angular/actions/workflows/angular-ci.yml)
+[![Build Status](https://github.com/UserViktor/WPM_WISE21-22_spring-petclinic-angular/actions/workflows/cypress.yml/badge.svg)](https://github.com/UserViktor/WPM_WISE21-22_spring-petclinic-angular/actions/workflows/cypress.yml)
 [![Build Status](https://github.com/UserViktor/WPM_WISE21-22_spring-petclinic-angular/actions/workflows/deployment.yml/badge.svg)](https://github.com/UserViktor/WPM_WISE21-22_spring-petclinic-angular/actions/workflows/deployment.yml)
 
 ## Angular frontend for Spring Petclinic
@@ -162,7 +164,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `./node_modules/.bin/cypress open` to start [Cypress](http://www.cypress.io/) and then execute the end-to-end tests.
-Before running the tests make sure you are serving the app via `ng serve`.
+Before running the tests make sure you are serving the app via `ng serve` and the backend application part of this project runs properly.
 
 ## Further help
 
