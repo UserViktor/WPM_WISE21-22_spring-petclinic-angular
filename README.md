@@ -30,7 +30,6 @@ git clone https://github.com/UserViktor/WPM_WISE21-22_spring-petclinic-angular.g
 ````
 Install local project package
 ````
-npm install --save-dev @angular/cli@latest
 npm install
 ````
 
@@ -57,13 +56,8 @@ Original Documentation URL: [https://spring-petclinic.github.io/spring-petclinic
 Access the Documentation by calling the [index.html](/docs/index.html) locally.
 
 Regenerate the `docs` folder with [compodoc](https://compodoc.app):
-### prerequisites compodoc
 ```
-npm install -g @compodoc/compodoc
-```
-### Rebuild docs
-```
-compodoc -p src/tsconfig.app.json -d docs
+npm run compodoc
 ```
 
 
@@ -162,7 +156,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 There are 3 ways of how to start the cypress tests(REST version/backend must be running):
 1. Run `ng serve` to start the angular application, afterwards run `./node_modules/.bin/cypress open` to start [Cypress](http://www.cypress.io/) and then execute the end-to-end tests.
 2. Run `ng e2e --headless --no-watch` to run the end-to-end tests headless. 
-3. Run `ng e2e` to run the angular application and automaticly afterwards to start [Cypress](http://www.cypress.io/) and then execute the end-to-end tests.
+3. Run `ng e2e` to run the angular application and automaticly afterwards to start [Cypress](http://www.cypress.io/) and then execute the end-to-end tests (Exit via CTRL+C in the terminal).
 
 ## Further help
 
