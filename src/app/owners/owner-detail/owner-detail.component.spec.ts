@@ -111,7 +111,7 @@ describe('OwnerDetailComponent', () => {
     });
   });
 
-  it('routing to owners page on click of editOwner,addPet,gotoOwnersList', () => {
+  it('routing to owners page on click of editOwner,addPet,gotoOwnersList,deleteOwner', () => {
     spyOn(router, 'navigate');
     let buttons = fixture.debugElement.queryAll(By.css('button'));
 
@@ -134,7 +134,6 @@ describe('OwnerDetailComponent', () => {
     deleteOwnerButton.click();
     spyOn(component, 'deleteOwner').and.callThrough();
     expect(router.navigate).toHaveBeenCalledWith(['/owners']);
-
   });
 
 });
